@@ -1,19 +1,15 @@
-FROM node:8
+from alpine:latest
 
-# Create app directory
-WORKDIR /usr/src/app
+RUN apk add --no-cache python3-dev \
+    && pip3 install --upgrade pip
 
-# Install app dependencies
-# A wildcard is used to ensure both package.json AND package-lock.json are copied
-# where available (npm@5+)
-COPY package*.json ./
+WORKDIR /app
 
-RUN npm install
-# If you are building your code for production
-# RUN npm ci --only=production
+COPY . /app
 
-# Bundle app source
-COPY . .
+RUN pip3 --no-cache-dir install -r requirements.txt
 
-EXPOSE 8080
-CMD [ "node", "server.js" ]
+EXPOSE 5000
+
+ENTRYPOINT ["python3"]
+CMD ["app.py"]
