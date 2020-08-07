@@ -6,10 +6,10 @@ COPY ./app/requirements.txt /app/requirements.txt
 
 WORKDIR /app
 
-RUN apk add --update \
-  && pip install --upgrade pip  \
-  && pip install -r requirements.txt \
-  && rm -rf /var/cache/apk/*
+RUN apk add --update
+RUN pip install --upgrade pip
+RUN pip install -r requirements.txt
+RUN rm -rf /var/cache/apk/*
 
 COPY . /app
 
