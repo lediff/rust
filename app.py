@@ -2,13 +2,9 @@ from flask import Flask
 import logging as logger
 logger.basicConfig(level="DEBUG")
 
+app = Flask(__name__)
 
-flaskAppInstance = Flask(__name__)
+@app.route('/')
 
-
-
-if __name__ == '__main__':
-
-    logger.debug("Starting Flask Server")
-    from api import *
-    flaskAppInstance.run(host="0.0.0.0",port=5000,debug=True,use_reloader=True)
+def index():
+	return '<h1>Login</h1>'
