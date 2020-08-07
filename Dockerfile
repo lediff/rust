@@ -8,7 +8,7 @@ WORKDIR /app
 
 RUN apk add --update
 RUN pip install --upgrade pip
-RUN pip install Flask==1.0.2
+RUN pip install --user Flask==1.0.2
 RUN rm -rf /var/cache/apk/*
 
 COPY . /app
