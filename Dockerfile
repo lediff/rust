@@ -1,4 +1,4 @@
-from python:3-alpine
+FROM python:3.7.2-stretch
 
 MAINTAINER Diffen
 
@@ -8,7 +8,6 @@ WORKDIR /app
 
 RUN apk add --update
 RUN pip install --upgrade pip
-RUN pip install flask
 RUN pip install -r requirements.txt
 RUN rm -rf /var/cache/apk/*
 
