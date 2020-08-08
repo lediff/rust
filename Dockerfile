@@ -8,6 +8,7 @@ WORKDIR /app
 
 RUN apk add --update
 RUN pip install --upgrade pip
+RUN pip install flask
 RUN pip install -r requirements.txt
 RUN rm -rf /var/cache/apk/*
 
