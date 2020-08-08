@@ -11,7 +11,7 @@ node {
         /* This builds the actual image; synonymous to
          * docker build on the command line */
 
-        app = docker.build("diffen/rustwebsite")
+        app = docker.build("diffen/hellonode")
     }
 
     stage('Test image') {

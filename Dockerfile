@@ -12,4 +12,6 @@ RUN pip install -r requirements.txt
 
 COPY . /app
 
+EXPOSE 80
+
 CMD python app.py run -h 0.0.0.0
